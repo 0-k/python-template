@@ -3,3 +3,6 @@ isort
 sphinx
 build
 twine
+flake8
+pytest
+pytest-cov
