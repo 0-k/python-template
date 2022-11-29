@@ -11,4 +11,4 @@ class TestMain(unittest.TestCase):
         pass
 
     def test_for_valid_main(self):
-        self.assertEqual(main.run(), None)
+        self.assertEqual(main.run(), 1)
