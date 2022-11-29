@@ -1,4 +1,4 @@
-name: Python package
+name: build
 
 on: [push]
 
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
       - uses: actions/checkout@v3
@@ -24,6 +24,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
       - name: set pythonpath
         run: |
           echo "PYTHONPATH=home/runner/work/" >> $GITHUB_ENV
@@ -35,4 +36,6 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: |
-          python -m pytest --import-mode=append test/
+          python -m pytest --import-mode=append test/ --cov=netto test/
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
