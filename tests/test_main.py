@@ -1,5 +1,5 @@
 import unittest
-import project.main as main
+import pytemplate.main as main
 
 
 class TestMain(unittest.TestCase):

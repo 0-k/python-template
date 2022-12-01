@@ -1,6 +1,6 @@
 
 
-Welcome to python-template's documentation!
+Welcome to pytemplate's documentation!
 =================================
 
 

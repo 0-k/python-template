@@ -1,4 +1,4 @@
-import project.utils.config as config
+import pytemplate.utils.config as config
 
 def run():
     return config.example_field
