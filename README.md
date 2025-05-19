@@ -7,6 +7,17 @@
 
 Project template in Python
 
+# Build a distribution manually
+
+Be sure to install the development requirements:
+`pip install -r requirements-dev.txt`
+
+To build, execute:
+`python3 -m build`
+
+To upload to PyPI (test):
+`python3 -m twine upload --repository testpypi dist/*`
+
 
 ## TODO
 
@@ -14,4 +25,4 @@ Project template in Python
 
 ## Credits
 
-Martin Klein, 2022
+Martin Klein, 2025
